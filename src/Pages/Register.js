@@ -1,18 +1,8 @@
-import React, { useContext } from 'react';
-import { FcGoogle } from 'react-icons/fc';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthProvider';
+import GoogleLogin from '../components/GoogleLogin';
 
 const Register = () => {
-    const { signInWithGoogle } = useContext(AuthContext)
-
-    const handleGoogleSignIn = () => {
-        console.log('Clicked')
-        signInWithGoogle()
-            .then(result => {
-            })
-
-    }
 
     return (
         <div className="container p-5 lg:w-1/3 lg:border lg:p-10 md:p-10  lg:mt-16">
@@ -27,6 +17,7 @@ const Register = () => {
                     <input
                         type="text"
                         id="name"
+                        placeholder='your Full Name'
                         name="name"
                         required
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -42,6 +33,7 @@ const Register = () => {
                     <input
                         type="email"
                         id="Email"
+                        placeholder='your email'
                         required
                         name="email"
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -55,41 +47,13 @@ const Register = () => {
 
                     <input
                         type="password"
+                        placeholder='your password'
                         required
                         id="password"
                         name="password"
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                 </div>
-
-                <div className="col-span-6">
-                    <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
-                        Phone Number
-                    </label>
-
-                    <input
-                        type="text"
-                        required
-                        id="phone"
-                        name="phone"
-                        className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                    />
-                </div>
-
-                <div className="col-span-6">
-                    <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
-                        Location
-                    </label>
-
-                    <input
-                        type="text"
-                        required
-                        id="location"
-                        name="location"
-                        className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                    />
-                </div>
-
 
                 <div className="col-span-6">
                     <label htmlFor="Type" className="block text-sm font-medium text-gray-700">Select Your Account Type</label>
@@ -131,10 +95,8 @@ const Register = () => {
                 </div>
             </form>
             <div className="divider">Or</div>
-            <div className="flex justify-center">
-                <button onClick={handleGoogleSignIn} className="btn btn-wide btn-base-100"><FcGoogle className='text-2xl mr-3' /> Login with Google</button>
-            </div>
 
+            <GoogleLogin></GoogleLogin>
 
         </div>
     );

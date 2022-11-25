@@ -1,16 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { FcGoogle } from "react-icons/fc";
-import { AuthContext } from '../contexts/AuthProvider';
+import GoogleLogin from '../components/GoogleLogin';
 
 const Login = () => {
-    const { signInWithGoogle } = useContext(AuthContext)
 
-    const handleGoogleSignIn = () => {
-        console.log('Clicked')
-        signInWithGoogle()
-            .then(result => console.log(result.user))
-    }
 
     return (
 
@@ -28,6 +21,7 @@ const Login = () => {
                         type="email"
                         id="Email"
                         name="email"
+                        placeholder='your email'
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                 </div>
@@ -41,6 +35,8 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
+                        placeholder='your email'
+
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                 </div>
@@ -73,13 +69,8 @@ const Login = () => {
                 </div>
             </form>
             <div className="divider">Or</div>
-            <div className="flex justify-center">
-                <button onClick={handleGoogleSignIn} className="btn btn-wide btn-base-100"><FcGoogle className='text-2xl mr-3' /> Login with Google</button>
-            </div>
-
-
+            <GoogleLogin></GoogleLogin>
         </div>
-
     );
 };
 
