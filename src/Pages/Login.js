@@ -1,15 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../components/GoogleLogin';
+import { AuthContext } from '../contexts/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
 
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+
+    const { signIn } = useContext(AuthContext)
+
+    const handleSignIn = event => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+        signIn(email, password).then(result => {
+            console.log(result.user)
+            form.reset()
+            navigate(from, { replace: true })
+            toast.success('You have logged in Successfully')
+
+
+        }).catch((error) => {
+            toast.error(error.message)
+        })
+    }
+    useTitle('Login')
 
     return (
 
         <div className="container lg:w-1/3 border lg:p-10 mt-16">
             <h1 className="text-4xl font-bold my-6 uppercase text-center divider">Login</h1>
-            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+            <form onSubmit={handleSignIn} className="mt-8 grid grid-cols-6 gap-6">
 
 
                 <div className="col-span-6">
@@ -35,7 +62,7 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
-                        placeholder='your email'
+                        placeholder='your password'
 
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />

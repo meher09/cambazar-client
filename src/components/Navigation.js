@@ -38,8 +38,11 @@ const Navigation = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user?.uid ?
+                        user?.uid ? <>
+                            <Link to='/dashboard' className="mr-3  menu menu-horizontal p-0">Dashboard</Link>
                             <p className="btn btn-sm" onClick={handleLogout}>Log out</p>
+                        </>
+
                             :
                             <Link to="/login" className="btn btn-sm">Login</Link>
                     }

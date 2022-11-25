@@ -1,13 +1,49 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import GoogleLogin from '../components/GoogleLogin';
+import { AuthContext } from '../contexts/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const Register = () => {
+    const { createUser, updateUserProfile } = useContext(AuthContext)
+    useTitle('Register')
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const password = form.password.value;
+        const email = form.email.value;
+        const type = form.type.value;
+
+        createUser(email, password)
+            .then(result => {
+                updateUserProfile(name)
+                toast.success('Successfully Registered')
+                form.reset()
+                console.log(result.user)
+
+            }
+
+            ).catch((error) => {
+                toast.error(error.message)
+            }
+
+            )
+
+    }
+
+
+
+
+
+
 
     return (
         <div className="container p-5 lg:w-1/3 lg:border lg:p-10 md:p-10  lg:mt-16">
             <h1 className="text-4xl font-bold my-6 uppercase text-center divider">Register</h1>
-            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+            <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
 
                 <div className="col-span-6">
                     <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
@@ -56,13 +92,22 @@ const Register = () => {
                 </div>
 
                 <div className="col-span-6">
+                    <label className="block text-sm font-medium text-gray-700">
+                        Add your Profile Picture
+                    </label>
+                    <input type="file" name='photo' className="file-input file-input-bordered w-full mt-1 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
+
+                </div>
+
+                <div className="col-span-6">
                     <label htmlFor="Type" className="block text-sm font-medium text-gray-700">Select Your Account Type</label>
                     <select
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                         required
+                        name='type'
                     >
-                        <option>Buyer</option>
-                        <option>Seller</option>
+                        <option value='buyer'>Buyer</option>
+                        <option value='seller'>Seller</option>
                     </select>
                 </div>
 
