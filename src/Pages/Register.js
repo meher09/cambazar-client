@@ -2,16 +2,21 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import GoogleLogin from '../components/GoogleLogin';
+import Spinner from '../components/Spinner';
 import { AuthContext } from '../contexts/AuthProvider';
 import useTitle from '../hooks/useTitle';
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const { createUser, updateUserProfile, loading, setLoading } = useContext(AuthContext)
     useTitle('Register')
 
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
+        const image = form.photo.files[0]
+        console.log(image)
+        const formData = new FormData()
+        formData.append('image', image)
         const name = form.name.value;
         const password = form.password.value;
         const email = form.email.value;
@@ -19,30 +24,32 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                updateUserProfile(name)
-                toast.success('Successfully Registered')
-                form.reset()
-                console.log(result.user)
+                const imgAPi = 'https://api.imgbb.com/1/upload?key=724954e4ab07779b7b4c03392b45d358'
+                fetch(imgAPi, {
+                    method: 'POST',
+                    body: formData,
+                }).then(res => res.json())
+                    .then(data => {
+                        const imgurl = data.data.display_url
+                        // rest functions
+                        updateUserProfile(name, imgurl)
+                        toast.success('Successfully Registered')
+                        form.reset()
+                        setLoading(false)
+                    })
 
             }
-
             ).catch((error) => {
                 toast.error(error.message)
+                setLoading(false)
             }
-
             )
-
     }
-
-
-
-
-
-
 
     return (
         <div className="container p-5 lg:w-1/3 lg:border lg:p-10 md:p-10  lg:mt-16">
             <h1 className="text-4xl font-bold my-6 uppercase text-center divider">Register</h1>
+            {loading ? <Spinner></Spinner> : ''}
             <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
 
                 <div className="col-span-6">
@@ -95,7 +102,12 @@ const Register = () => {
                     <label className="block text-sm font-medium text-gray-700">
                         Add your Profile Picture
                     </label>
-                    <input type="file" name='photo' className="file-input file-input-bordered w-full mt-1 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
+                    <input
+                        type="file"
+                        required
+                        accept='image/*'
+                        name='photo'
+                        className="file-input file-input-bordered w-full mt-1 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
 
                 </div>
 

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../components/GoogleLogin';
+import Spinner from '../components/Spinner';
 import { AuthContext } from '../contexts/AuthProvider';
 import useTitle from '../hooks/useTitle';
 
@@ -11,7 +12,7 @@ const Login = () => {
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
 
-    const { signIn } = useContext(AuthContext)
+    const { signIn, loading, setLoading } = useContext(AuthContext)
 
     const handleSignIn = event => {
         event.preventDefault()
@@ -24,10 +25,13 @@ const Login = () => {
             form.reset()
             navigate(from, { replace: true })
             toast.success('You have logged in Successfully')
+            setLoading(false)
 
 
         }).catch((error) => {
+            setLoading(false)
             toast.error(error.message)
+
         })
     }
     useTitle('Login')
@@ -35,7 +39,12 @@ const Login = () => {
     return (
 
         <div className="container lg:w-1/3 border lg:p-10 mt-16">
-            <h1 className="text-4xl font-bold my-6 uppercase text-center divider">Login</h1>
+            <h1 className="text-4xl font-bold my-6 uppercase text-center divider">
+                Login
+            </h1>
+            {loading ? <Spinner></Spinner> : ''}
+
+
             <form onSubmit={handleSignIn} className="mt-8 grid grid-cols-6 gap-6">
 
 
@@ -48,6 +57,7 @@ const Login = () => {
                         type="email"
                         id="Email"
                         name="email"
+                        required
                         placeholder='your email'
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
@@ -61,6 +71,7 @@ const Login = () => {
                     <input
                         type="password"
                         id="password"
+                        required
                         name="password"
                         placeholder='your password'
 
