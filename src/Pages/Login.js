@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import GoogleLogin from '../components/GoogleLogin';
+import { setAuthToken } from '../api/auth';
+import GoogleLogin from '../components/Authentication/GoogleLogin';
 import Spinner from '../components/Spinner';
 import { AuthContext } from '../contexts/AuthProvider';
 import useTitle from '../hooks/useTitle';
@@ -21,7 +22,7 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password)
         signIn(email, password).then(result => {
-            console.log(result.user)
+            setAuthToken(result.user)
             form.reset()
             navigate(from, { replace: true })
             toast.success('You have logged in Successfully')

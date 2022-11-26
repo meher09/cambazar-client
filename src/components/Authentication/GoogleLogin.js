@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthProvider';
+import { AuthContext } from '../../contexts/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import { useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import Spinner from './Spinner';
+import Spinner from '../Spinner';
+import { setAuthToken } from '../../api/auth';
 
 
 const GoogleLogin = () => {
@@ -16,6 +17,7 @@ const GoogleLogin = () => {
         console.log('Clicked')
         signInWithGoogle()
             .then(result => {
+                setAuthToken(result.user)
                 navigate(from, { replace: true })
                 toast.success('You have logged in Successfully')
                 setLoading(false)

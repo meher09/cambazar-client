@@ -48,6 +48,7 @@ const AuthProvider = ({ children }) => {
     // Logout Functionality
     const logout = () => {
         setLoading(true)
+        localStorage.removeItem('cam-bazar-token')
         return signOut(auth)
     }
 

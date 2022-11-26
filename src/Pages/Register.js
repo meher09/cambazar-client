@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import GoogleLogin from '../components/GoogleLogin';
+import { setAuthToken } from '../api/auth';
+import GoogleLogin from '../components/Authentication/GoogleLogin';
 import Spinner from '../components/Spinner';
 import { AuthContext } from '../contexts/AuthProvider';
 import useTitle from '../hooks/useTitle';
@@ -25,7 +26,7 @@ const Register = () => {
         const name = form.name.value;
         const password = form.password.value;
         const email = form.email.value;
-        const type = form.type.value;
+        const role = form.role.value;
 
         createUser(email, password)
             .then(result => {
@@ -38,8 +39,9 @@ const Register = () => {
                         const imgurl = data.data.display_url
                         updateUserProfile(name, imgurl)
                         form.reset()
-                        setLoading(false)
+                        setAuthToken(result.user)
                         navigate(from, { replace: true })
+                        setLoading(false)
                         toast.success('Successfully Registered')
                     })
 
@@ -121,7 +123,7 @@ const Register = () => {
                     <select
                         className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                         required
-                        name='type'
+                        name='role'
                     >
                         <option value='buyer'>Buyer</option>
                         <option value='seller'>Seller</option>

@@ -10,7 +10,7 @@ const Footer = () => {
                     <strong
                         className="block text-center text-xl font-medium text-white sm:text-3xl"
                     >
-                        Want us to email you with the latest blockbuster news?
+                        Want us to email you with the latest camera news?
                     </strong>
 
                     <form className="mt-6">
@@ -37,9 +37,10 @@ const Footer = () => {
                 <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
                     <div className="mx-auto max-w-sm lg:max-w-none">
                         <p className="mt-4 text-center text-white lg:text-left lg:text-lg">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
-                            natus quod eveniet aut perferendis distinctio iusto repudiandae,
-                            provident velit earum?
+                            We also offer a wide range of secondhand camera gear for sale,
+                            so if you're looking for a bargain, you're in the right place!
+                            Whether you're a professional photographer or a hobbyist, we're
+                            sure to have something to suit your needs.
                         </p>
 
                         <div className="mt-6 flex justify-center gap-4 lg:justify-start">

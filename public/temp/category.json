@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "DSLR CAMERA",
+        "image": ""
+    },
+    {
+        "id": 2,
+        "name": "VIDEO CAMERA",
+        "image": ""
+    },
+    {
+        "id": 3,
+        "name": "ACTION CAMERA",
+        "image": ""
+    }
+]
