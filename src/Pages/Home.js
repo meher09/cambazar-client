@@ -1,8 +1,10 @@
 import React from 'react';
 import Advertisements from '../components/Home/Advertisements';
+import BlogSection from '../components/Home/BlogSection';
 import Categories from '../components/Home/Categories';
 import HomeSlider from '../components/Home/HomeSlider';
 import HowWorks from '../components/Home/HowWorks';
+import Services from '../components/Home/Services';
 import useTitle from '../hooks/useTitle';
 
 const Home = () => {
@@ -10,9 +12,11 @@ const Home = () => {
     return (
         <>
             <HomeSlider></HomeSlider>
-            <Advertisements></Advertisements>
-            <Categories></Categories>
             <HowWorks></HowWorks>
+            <Advertisements></Advertisements>
+            <Services></Services>
+            <Categories></Categories>
+            <BlogSection></BlogSection>
         </>
     );
 };
