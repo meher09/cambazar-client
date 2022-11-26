@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../components/GoogleLogin';
 import Spinner from '../components/Spinner';
 import { AuthContext } from '../contexts/AuthProvider';
@@ -9,6 +9,11 @@ import useTitle from '../hooks/useTitle';
 const Register = () => {
     const { createUser, updateUserProfile, loading, setLoading } = useContext(AuthContext)
     useTitle('Register')
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -31,11 +36,11 @@ const Register = () => {
                 }).then(res => res.json())
                     .then(data => {
                         const imgurl = data.data.display_url
-                        // rest functions
                         updateUserProfile(name, imgurl)
-                        toast.success('Successfully Registered')
                         form.reset()
                         setLoading(false)
+                        navigate(from, { replace: true })
+                        toast.success('Successfully Registered')
                     })
 
             }

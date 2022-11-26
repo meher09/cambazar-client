@@ -3,12 +3,12 @@ import React from 'react';
 const Footer = () => {
     return (
 
-        <footer aria-label="Site Footer" className="bg-white container mt-16">
+        <footer aria-label="Site Footer" className="bg-black container-fluid mt-16">
             <hr />
-            <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+            <div className="mx-auto container px-4 pt-16 pb-8 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-md">
                     <strong
-                        className="block text-center text-xl font-medium text-gray-900 sm:text-3xl"
+                        className="block text-center text-xl font-medium text-white sm:text-3xl"
                     >
                         Want us to email you with the latest blockbuster news?
                     </strong>
@@ -25,7 +25,7 @@ const Footer = () => {
                             />
 
                             <button
-                                className="absolute top-1/2 right-1 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
+                                className="absolute top-1/2 right-1 -translate-y-1/2 rounded-full bg-black px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
                                 type="button"
                             >
                                 Subscribe
@@ -36,7 +36,7 @@ const Footer = () => {
 
                 <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
                     <div className="mx-auto max-w-sm lg:max-w-none">
-                        <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
+                        <p className="mt-4 text-center text-white lg:text-left lg:text-lg">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
                             natus quod eveniet aut perferendis distinctio iusto repudiandae,
                             provident velit earum?
@@ -44,7 +44,7 @@ const Footer = () => {
 
                         <div className="mt-6 flex justify-center gap-4 lg:justify-start">
                             <a
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-white transition hover:text-gray-100/75"
                                 href="/"
                                 target="_blank"
                                 rel="noreferrer"
@@ -66,7 +66,7 @@ const Footer = () => {
                             </a>
 
                             <a
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-white transition hover:text-gray-100/75"
                                 href="/"
                                 target="_blank"
                                 rel="noreferrer"
@@ -88,7 +88,7 @@ const Footer = () => {
                             </a>
 
                             <a
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-white transition hover:text-gray-100/75"
                                 href="/"
                                 target="_blank"
                                 rel="noreferrer"
@@ -108,7 +108,7 @@ const Footer = () => {
                             </a>
 
                             <a
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-white transition hover:text-gray-100/75"
                                 href="/"
                                 target="_blank"
                                 rel="noreferrer"
@@ -130,7 +130,7 @@ const Footer = () => {
                             </a>
 
                             <a
-                                className="text-gray-700 transition hover:text-gray-700/75"
+                                className="text-white transition hover:text-gray-100/75"
                                 href="/"
                                 target="_blank"
                                 rel="noreferrer"
@@ -157,65 +157,65 @@ const Footer = () => {
                         className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left"
                     >
                         <div>
-                            <strong className="font-medium text-gray-900"> Services </strong>
+                            <strong className="font-medium text-white"> Services </strong>
 
                             <nav
                                 aria-label="Footer Services Nav"
                                 className="mt-6 flex flex-col space-y-1"
                             >
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     Marketing
                                 </a>
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     Graphic Design
                                 </a>
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     App Development
                                 </a>
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     Web Development
                                 </a>
                             </nav>
                         </div>
 
                         <div>
-                            <strong className="font-medium text-gray-900"> About </strong>
+                            <strong className="font-medium text-white"> About </strong>
 
                             <nav
                                 aria-label="Footer About Nav"
                                 className="mt-6 flex flex-col space-y-1"
                             >
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     About
                                 </a>
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     Careers
                                 </a>
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     History
                                 </a>
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     Our Team
                                 </a>
                             </nav>
                         </div>
 
                         <div>
-                            <strong className="font-medium text-gray-900"> Support </strong>
+                            <strong className="font-medium text-white"> Support </strong>
 
                             <nav
                                 aria-label="Footer Support Nav"
                                 className="mt-6 flex flex-col space-y-1"
                             >
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     FAQs
                                 </a>
 
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     Contact
                                 </a>
 
-                                <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                                <a className="text-white transition hover:text-gray-100/75" href="/">
                                     Live Chat
                                 </a>
                             </nav>
@@ -224,7 +224,7 @@ const Footer = () => {
                 </div>
 
                 <div className="mt-16 border-t border-gray-100 pt-8">
-                    <p className="text-center text-xs leading-relaxed text-gray-500">
+                    <p className="text-center text-xs leading-relaxed text-gray-300">
                         © CamSell 2022. All rights reserved.
 
                     </p>
