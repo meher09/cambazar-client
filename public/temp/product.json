@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "pName": "Canon Eos 4000D DSLR",
+        "product_image": "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+        "date": "19th July 2022",
+        "seller": "Elon Mask",
+        "seller_image": "https://images.unsplash.com/photo-1614644147724-2d4785d69962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        "verified": true,
+        "advertisement": true,
+        "used": "2 years",
+        "orginalPrice": 40000,
+        "sellingPrice": 20000,
+        "location": "Dhaka"
+    },
+    {
+        "id": 2,
+        "pName": "Canon Eos 4000D ",
+        "date": "20th July 2022",
+        "product_image": "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+        "seller": "Elon Mask",
+        "seller_image": "https://images.unsplash.com/photo-1614644147724-2d4785d69962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        "advertisement": true,
+        "used": "20 years",
+        "orginalPrice": 40000,
+        "sellingPrice": 20000,
+        "location": "Dhaka"
+    },
+    {
+        "id": 3,
+        "pName": "Canon Eos 3000D DSLR",
+        "product_image": "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+        "date": "9th July 2022",
+        "seller": "Elon Mask",
+        "seller_image": "https://images.unsplash.com/photo-1614644147724-2d4785d69962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+        "verified": true,
+        "advertisement": true,
+        "used": "22 years",
+        "orginalPrice": 40000,
+        "sellingPrice": 20000,
+        "location": "Dhaka"
+    }
+]

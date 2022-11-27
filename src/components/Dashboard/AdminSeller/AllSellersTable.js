@@ -2,11 +2,12 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import VerifiedText from './VerifiedText';
 
+
 const AllSellersTable = ({ buyer }) => {
     const { name, email, photoURL, _id } = buyer
 
 
-    
+
     const handleVerify = email => {
         fetch(`http://localhost:5000/user/${email}`, {
             method: 'PUT',
@@ -18,8 +19,6 @@ const AllSellersTable = ({ buyer }) => {
                 }
             })
     }
-
-
 
 
 

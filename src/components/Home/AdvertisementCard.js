@@ -5,12 +5,29 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import { MdPlace } from "react-icons/md";
 
 
-const AdvertisementCard = () => {
+const AdvertisementCard = ({ product }) => {
+
+
+
+    const { pName,
+        product_image,
+        date,
+        location,
+        used,
+        orginalPrice,
+        sellingPrice,
+        seller_image,
+        seller,
+        verified } = product
+
+
+
+
     return (
         <div className="block rounded-lg p-4 shadow-sm shadow-rose-100">
             <img
                 alt="Home"
-                src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src={product_image}
                 className="h-56 w-full rounded-md object-cover"
             />
 
@@ -18,21 +35,24 @@ const AdvertisementCard = () => {
 
                 <div className="flex justify-between">
                     <div>
-                        <p className="font-medium">Canon Eos 4000D DSLR</p>
-                        <p className="text-sm text-gray-600">Posted: 19th July 2020</p>
+                        <p className="font-medium">{pName}</p>
+                        <p className="text-sm text-gray-600">{date}</p>
 
                     </div>
-                    <div className='flex items-center'>
-                        <img
-                            className="rounded-full h-8 w-8 mr-3"
-                            src="https://images.unsplash.com/photo-1614644147724-2d4785d69962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
-                            alt="" />
-                        <p className="font-medium">Elon Mask</p>
 
+                    <div>
+                        <div className='flex items-center'>
+                            <img
+                                className="rounded-full h-8 w-8 mr-3"
+                                src={seller_image}
+                                alt="" />
+                            <p className="font-medium">{seller}</p>
+                            {verified && <p className="font-medium bg-rose-700 rounded-full text-white ml-3"><TiTick /></p>}
 
-                        <p className="font-medium bg-rose-700 rounded-full text-white ml-3"><TiTick /></p>
-
+                        </div>
                     </div>
+
+
 
                 </div>
 
@@ -44,7 +64,7 @@ const AdvertisementCard = () => {
 
                         <div className="mt-1.5 sm:ml-3 sm:mt-0">
                             <p className="text-gray-600">Location</p>
-                            <p className="font-medium">Dhaka</p>
+                            <p className="font-medium">{location}</p>
                         </div>
                     </div>
 
@@ -53,7 +73,7 @@ const AdvertisementCard = () => {
 
                         <div className="mt-1.5 sm:ml-3 sm:mt-0">
                             <p className="text-gray-700 ">Used</p>
-                            <p className="font-medium">2 Years</p>
+                            <p className="font-medium">{used}</p>
                         </div>
                     </div>
 
@@ -61,13 +81,19 @@ const AdvertisementCard = () => {
                         <GiPriceTag className='h-6 w-6 text-rose-700' />
                         <div className="mt-1.5 sm:ml-3 sm:mt-0">
                             <p className="text-gray-500">Orginal Price</p>
-                            <p className="font-medium">80000 USD</p>
+                            <p className="font-medium">{orginalPrice} USD</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="text-center mt-4">
+                <div className="mt-6 flex items-center justify-center gap-8 text-xs">
+                    <p className="text-lg font-bold rounded p-3 bg-transparent text-rose-900 border border-rose-900  text-center">Sale: {sellingPrice} USD</p>
+                </div>
+
+
+                <div className="mt-4 flex justify-between">
                     <button className="btn btn-sm bg-rose-700 hover:bg-rose-900">Book Now</button>
+                    <button className="btn btn-sm bg-rose-500 hover:bg-rose-900">More Details</button>
                 </div>
 
 

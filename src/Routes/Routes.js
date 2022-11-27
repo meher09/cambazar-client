@@ -32,10 +32,6 @@ const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: '/dashboard',
-                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
-            },
-            {
                 path: '/users/buyers',
                 element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
             },
@@ -53,16 +49,16 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard',
-                element: <Dashboard></Dashboard>
+                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
             },
             {
                 path: '/dashboard/buyers',
-                element: <AllBuyers></AllBuyers>,
+                element: <PrivateRoute><AllBuyers></AllBuyers></PrivateRoute>,
                 loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/user/buyer`)
             },
             {
                 path: '/dashboard/sellers',
-                element: <AllSellers></AllSellers>,
+                element: <PrivateRoute><AllSellers></AllSellers></PrivateRoute>,
                 loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/user/seller`)
             },
 
