@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Main from "../layouts/Main";
 import AllBuyers from "../Pages/AllBuyers";
+import AllSellers from "../Pages/AllSellers";
 import Blog from "../Pages/Blog";
 import Dashboard from "../Pages/Dashboard";
 import Home from "../Pages/Home";
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
                 path: '/dashboard/buyers',
                 element: <AllBuyers></AllBuyers>,
                 loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/user/buyer`)
+            },
+            {
+                path: '/dashboard/sellers',
+                element: <AllSellers></AllSellers>,
+                loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/user/seller`)
             },
 
         ]

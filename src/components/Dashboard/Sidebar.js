@@ -40,7 +40,7 @@ const Sidebar = () => {
 
                             <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent  ">All Sellers</p>
+                                <Link to="/dashboard/sellers" class="text-black font-medium border-b border-transparent  ">All Sellers</Link>
                             </button>
 
 

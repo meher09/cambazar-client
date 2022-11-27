@@ -1,4 +1,4 @@
-export const setAuthToken = (user, name, imgurl, userRole) => {
+export const setAuthToken = (user,name, imgurl, userRole) => {
     const currentUser = {
         name: user.displayName || name,
         email: user.email,
