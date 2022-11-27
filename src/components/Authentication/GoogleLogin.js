@@ -19,7 +19,7 @@ const GoogleLogin = () => {
             .then(result => {
                 const role = 'buyer'
                 console.log(result)
-                setAuthToken(result.user, result?.user?.photoURL, role)
+                setAuthToken(result.user, result?.user?.displayName, result?.user?.photoURL, role)
                 navigate(from, { replace: true })
                 toast.success('You have logged in Successfully')
                 setLoading(false)

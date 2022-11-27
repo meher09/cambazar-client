@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminHeader = () => {
+const AddProducts = () => {
     return (
         <div className="container ml-5">
             <h1 className='text-center text-2xl font-bold uppercase divider mb-6'>Add Your Products</h1>
@@ -163,4 +163,4 @@ const AdminHeader = () => {
     );
 };
 
-export default AdminHeader;
+export default AddProducts;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { MdDashboardCustomize } from "react-icons/md";
 import { BiImageAdd } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 
 const Sidebar = () => {
@@ -29,15 +30,20 @@ const Sidebar = () => {
                                 <p class="text-black font-medium border-b border-transparent  ">My Buyers</p>
                             </button>
 
+
+
                             <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent  ">All Buyers</p>
+                                <Link to='/dashboard/buyers' class="text-black font-medium border-b border-transparent ">All Buyers</Link>
                             </button>
+
 
                             <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
                                 <p class="text-black font-medium border-b border-transparent  ">All Sellers</p>
                             </button>
+
+
                             <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
                                 <p class="text-black font-medium border-b border-transparent  ">My Orders</p>
@@ -45,7 +51,7 @@ const Sidebar = () => {
 
                             <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent  ">Reported Items</p>
+                                <p class="text-black font-medium border-b border-transparent">Reported Items</p>
                             </button>
                         </div>
 

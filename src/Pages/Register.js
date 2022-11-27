@@ -39,7 +39,7 @@ const Register = () => {
                         navigate(from, { replace: true })
                         form.reset()
                         setLoading(false)
-                        setAuthToken(result.user, imgurl, role)
+                        setAuthToken(result.user, name, imgurl, role)
 
                     })
 
