@@ -3,7 +3,7 @@ import React from 'react';
 const VerifiedText = () => {
     return (
         <span
-            class="inline-flex items-center justify-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-emerald-700"
+            className="inline-flex items-center justify-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-emerald-700"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@ const VerifiedText = () => {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="-ml-1 mr-1.5 h-4 w-4"
+                className="-ml-1 mr-1.5 h-4 w-4"
             >
                 <path
                     stroke-linecap="round"
@@ -20,7 +20,7 @@ const VerifiedText = () => {
                 />
             </svg>
 
-            <p class="whitespace-nowrap text-sm">Verfied</p>
+            <p className="whitespace-nowrap text-sm">Verfied</p>
         </span>
     );
 };

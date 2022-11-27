@@ -8,6 +8,8 @@ import Dashboard from "../Pages/Dashboard";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import SingleCategory from "../Pages/SingleCategory";
+import SingleProduct from "../Pages/SingleProduct";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -36,10 +38,14 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
             },
             {
-                path: 'category/:id',
-                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-
-
+                path: 'category/:category',
+                element: <PrivateRoute><SingleCategory></SingleCategory></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.category}`)
+            },
+            {
+                path: 'product/:id',
+                element: <PrivateRoute><SingleProduct></SingleProduct></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
             },
         ]
     },

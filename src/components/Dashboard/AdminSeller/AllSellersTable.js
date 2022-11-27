@@ -26,12 +26,12 @@ const AllSellersTable = ({ buyer }) => {
     return (
         <tr>
 
-            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                 <img src={photoURL} className="w-16 h-16 rounded-full" alt="" />
             </td>
-            <td class="whitespace-nowrap px-4 py-2 text-gray-700">{name}</td>
-            <td class="whitespace-nowrap px-4 py-2 text-gray-700">{email}</td>
-            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            <td className="whitespace-nowrap px-4 py-2 text-gray-700">{name}</td>
+            <td className="whitespace-nowrap px-4 py-2 text-gray-700">{email}</td>
+            <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                 {
                     buyer.verified ? <VerifiedText></VerifiedText> :
 

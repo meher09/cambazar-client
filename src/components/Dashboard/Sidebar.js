@@ -8,50 +8,50 @@ const Sidebar = () => {
     return (
         <>
             <div className='hidden md:block w-96 border-r'>
-                <div id="Main" class="bg-white top-0 bg-white w-full">
-                    <div class="w-full">
-                        <div class="mt-4 flex flex-col px-6 justify-start items-center px-4 w-full">
-                            <button class=" flex jusitfy-start  text-rose-700  rounded py-3 items-center space-x-6 w-full">
+                <div id="Main" className="bg-white top-0 bg-white w-full">
+                    <div className="w-full">
+                        <div className="mt-4 flex flex-col px-6 justify-start items-center px-4 w-full">
+                            <button className=" flex jusitfy-start  text-rose-700  rounded py-3 items-center space-x-6 w-full">
                                 <MdDashboardCustomize className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent  ">Dashboard</p>
+                                <p className="text-black font-medium border-b border-transparent  ">Dashboard</p>
                             </button>
-                            <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
+                            <button className=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent  ">Add Product</p>
-                            </button>
-
-                            <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
-                                <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent  ">My Products</p>
+                                <p className="text-black font-medium border-b border-transparent  ">Add Product</p>
                             </button>
 
-                            <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
+                            <button className=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent  ">My Buyers</p>
+                                <p className="text-black font-medium border-b border-transparent  ">My Products</p>
                             </button>
 
-
-
-                            <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
+                            <button className=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <Link to='/dashboard/buyers' class="text-black font-medium border-b border-transparent ">All Buyers</Link>
+                                <p className="text-black font-medium border-b border-transparent  ">My Buyers</p>
                             </button>
 
 
-                            <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
+
+                            <button className=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <Link to="/dashboard/sellers" class="text-black font-medium border-b border-transparent  ">All Sellers</Link>
+                                <Link to='/dashboard/buyers' className="text-black font-medium border-b border-transparent ">All Buyers</Link>
                             </button>
 
 
-                            <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
+                            <button className=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent  ">My Orders</p>
+                                <Link to="/dashboard/sellers" className="text-black font-medium border-b border-transparent  ">All Sellers</Link>
                             </button>
 
-                            <button class=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
+
+                            <button className=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
                                 <BiImageAdd className='w-6 h-6 text-rose-700' />
-                                <p class="text-black font-medium border-b border-transparent">Reported Items</p>
+                                <p className="text-black font-medium border-b border-transparent  ">My Orders</p>
+                            </button>
+
+                            <button className=" flex jusitfy-start  text-indigo-200  rounded py-3 items-center w-full space-x-6">
+                                <BiImageAdd className='w-6 h-6 text-rose-700' />
+                                <p className="text-black font-medium border-b border-transparent">Reported Items</p>
                             </button>
                         </div>
 

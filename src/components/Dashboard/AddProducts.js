@@ -4,7 +4,7 @@ const AddProducts = () => {
     return (
         <div className="container ml-5">
             <h1 className='text-center text-2xl font-bold uppercase divider mb-6'>Add Your Products</h1>
-            <div class="w-full px-4 mx-auto md:w-5/6  lg:w-1/2">
+            <div className="w-full px-4 mx-auto md:w-5/6  lg:w-1/2">
                 <form>
                     <div className="col-span-6 mb-6">
                         <label htmlFor="password" className="block font-bold font-medium text-black">
@@ -14,7 +14,7 @@ const AddProducts = () => {
                         <input
                             type="password"
                             placeholder="Password"
-                            class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                            className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                         />
                     </div>
 
@@ -148,11 +148,11 @@ const AddProducts = () => {
                         />
                     </div>
 
-                    <div class="mb-10">
+                    <div className="mb-10">
                         <input
                             type="submit"
                             value="Sign In"
-                            class="bordder-primary w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
+                            className="bordder-primary w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
                         />
                     </div>
                 </form>

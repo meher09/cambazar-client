@@ -3,13 +3,16 @@ import { TiTick } from "react-icons/ti";
 import { GiPriceTag } from "react-icons/gi";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { MdPlace } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 const AdvertisementCard = ({ product }) => {
 
 
 
-    const { pName,
+    const {
+        _id,
+        pName,
         product_image,
         date,
         location,
@@ -93,7 +96,7 @@ const AdvertisementCard = ({ product }) => {
 
                 <div className="mt-4 flex justify-between">
                     <button className="btn btn-sm bg-rose-700 hover:bg-rose-900">Book Now</button>
-                    <button className="btn btn-sm bg-rose-500 hover:bg-rose-900">More Details</button>
+                    <Link to={`/product/${_id}`} className="btn btn-sm bg-rose-500 hover:bg-rose-900">More Details</Link>
                 </div>
 
 
