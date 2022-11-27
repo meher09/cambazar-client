@@ -17,10 +17,16 @@ const SingleProduct = () => {
     const [productCategory, setProductCategory] = useState({})
     useEffect(() => { fetch(`http://localhost:5000/category/${category}`).then(res => res.json()).then(data => setProductCategory(data)) }, [])
 
-    const handleReport = async (id) => {
+    const handleReport = (id) => {
         const dbUri = `http://localhost:5000/product/${_id}`
-        const reportData = { reported: true }
-        fetch(dbUri, { method: 'PUT', body: reportData })
+        const reported = { 'reported': true }
+        fetch(dbUri, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reported)
+        })
             .then(res => res.json()).then(data => {
                 if (data.acknowledged) {
                     toast.success("Reported to admin")
@@ -52,7 +58,7 @@ const SingleProduct = () => {
                                 {productCategory && productCategory?.name}
                             </p>
                             <button
-                                onClick={handleReport}
+                                onClick={() => handleReport(_id)}
                                 className='text-white bg-rose-700 px-3 py-0.5 rounded-full'
                             >Report This Items</button>
 
