@@ -1,15 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CategoryCard from './CategoryCard';
 
 const Categories = () => {
 
+    const [categories, setCategories] = useState([])
+
+
+
+    // Category Loads
     useEffect(() => {
-        fetch('temp/category.json')
+        fetch(`${process.env.REACT_APP_REQUEST_URL}/categories`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                setCategories(data)
             })
     }, [])
+
+    // Data Loads
 
 
     return (
@@ -30,8 +37,7 @@ const Categories = () => {
                                 <h2 className="text-2xl font-bold text-white">Choose best Camera Types</h2>
 
                                 <p className="mt-4 max-w-[45ch] text-sm text-white">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-                                    cupiditate mollitia saepe vitae libero nobis.
+                                    There are several Camera brands in the market. WE have decorated our brands according to the categories
                                 </p>
 
 
@@ -40,7 +46,7 @@ const Categories = () => {
 
                         <div className="grid grid-cols-2 gap-4 lg:col-span-2 lg:grid-cols-3 lg:py-12">
                             {
-                                [...Array(3)].map(category => <CategoryCard></CategoryCard>)
+                                categories.map(category => <CategoryCard key={category._id} category={category}></CategoryCard>)
                             }
 
                         </div>

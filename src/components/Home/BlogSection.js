@@ -39,12 +39,11 @@ const BlogSection = () => {
                                         href="/"
                                         className="text-dark hover:text-rose-700 mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                                     >
-                                        50+ Best creative website themes & templates
+                                        What kind of camera you should buy
                                     </a>
                                 </h3>
                                 <p className="text-body-color mb-7 text-base leading-relaxed">
-                                    Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
-                                    Lorem consectetur adipiscing elit.
+                                    Do you want to know what kind of camera you should buy. Here we have discussed the details of Camera choosing system
                                 </p>
                                 <a
                                     href="/"
@@ -66,12 +65,11 @@ const BlogSection = () => {
                                         href="/"
                                         className="text-dark hover:text-rose-700 mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                                     >
-                                        The ultimate UX and UI guide to card design
+                                        The guide to choose best camera
                                     </a>
                                 </h3>
                                 <p className="text-body-color mb-7 text-base leading-relaxed">
-                                    Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
-                                    Lorem consectetur adipiscing elit.
+                                    How you can identify the best camera. Here is the utimate guide to buy best choosing best camrea
                                 </p>
                                 <a
                                     href="/"
@@ -95,12 +93,11 @@ const BlogSection = () => {
                                         href="/"
                                         className="text-dark hover:text-rose-700 mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
                                     >
-                                        Creative Card Component designs graphic elements
+                                        Creative Picture Ideas
                                     </a>
                                 </h3>
                                 <p className="text-body-color mb-7 text-base leading-relaxed">
-                                    Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
-                                    Lorem consectetur adipiscing elit.
+                                    It is not only camera features but you need to know about the creative image ideas to perform the best capture
                                 </p>
                                 <a
                                     href="/"

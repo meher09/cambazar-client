@@ -1,6 +1,8 @@
-export const setAuthToken = user => {
+export const setAuthToken = (user, imgurl, userRole) => {
     const currentUser = {
-        email: user.email
+        email: user.email,
+        photoURL: user.,
+        role: userRole,
     }
     fetch(`http://localhost:5000/user/${user?.email}`, {
         method: 'PUT',

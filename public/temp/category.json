@@ -2,16 +2,16 @@
     {
         "id": 1,
         "name": "DSLR CAMERA",
-        "image": ""
+        "image": "https://i.ibb.co/RP6799k/dslr.png"
     },
     {
         "id": 2,
         "name": "VIDEO CAMERA",
-        "image": ""
+        "image": "https://i.ibb.co/dPYFvkn/video.png"
     },
     {
         "id": 3,
         "name": "ACTION CAMERA",
-        "image": ""
+        "image": "https://i.ibb.co/NjT42X4/action.png"
     }
 ]

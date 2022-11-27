@@ -30,19 +30,22 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                const imgAPi = 'https://api.imgbb.com/1/upload?key=724954e4ab07779b7b4c03392b45d358'
+
+                const imgAPi = process.env.REACT_APP_IMG_API_URL
                 fetch(imgAPi, {
                     method: 'POST',
                     body: formData,
                 }).then(res => res.json())
                     .then(data => {
+                        console.log(data)
                         const imgurl = data.data.display_url
                         updateUserProfile(name, imgurl)
-                        form.reset()
-                        setAuthToken(result.user)
-                        navigate(from, { replace: true })
-                        setLoading(false)
                         toast.success('Successfully Registered')
+                        navigate(from, { replace: true })
+                        form.reset()
+                        setLoading(false)
+                        setAuthToken(result.user, role)
+
                     })
 
             }
