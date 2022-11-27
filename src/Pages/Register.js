@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setAuthToken } from '../api/auth';
+import imgBbUploader from '../api/imgBbUploader';
 import GoogleLogin from '../components/Authentication/GoogleLogin';
 import Spinner from '../components/Spinner';
 import { AuthContext } from '../contexts/AuthProvider';
@@ -30,21 +31,15 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-
-                const imgAPi = process.env.REACT_APP_IMG_API_URL
-                fetch(imgAPi, {
-                    method: 'POST',
-                    body: formData,
-                }).then(res => res.json())
+                imgBbUploader(formData)
                     .then(data => {
-                        console.log(data)
                         const imgurl = data.data.display_url
                         updateUserProfile(name, imgurl)
                         toast.success('Successfully Registered')
                         navigate(from, { replace: true })
                         form.reset()
                         setLoading(false)
-                        setAuthToken(result.user, role)
+                        setAuthToken(result.user, imgurl, role)
 
                     })
 

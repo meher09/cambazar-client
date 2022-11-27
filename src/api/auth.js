@@ -1,7 +1,7 @@
 export const setAuthToken = (user, imgurl, userRole) => {
     const currentUser = {
         email: user.email,
-        photoURL: user.,
+        photoURL: imgurl,
         role: userRole,
     }
     fetch(`http://localhost:5000/user/${user?.email}`, {
