@@ -8,7 +8,7 @@ const SellerProductTable = ({ product }) => {
 
     const handleAdvertise = (id) => {
         const advertise = { advertisement: true }
-        fetch(`http://localhost:5000/products/advertise/    ${id}`, {
+        fetch(` https://server-nine-lilac.vercel.app/products/advertise/    ${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "Application/json"

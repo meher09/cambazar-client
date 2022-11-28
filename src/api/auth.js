@@ -5,7 +5,7 @@ export const setAuthToken = (user,name, imgurl, userRole) => {
         photoURL: imgurl,
         role: userRole,
     }
-    fetch(`http://localhost:5000/user/${user?.email}`, {
+    fetch(` https://server-nine-lilac.vercel.app/user/${user?.email}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'

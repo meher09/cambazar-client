@@ -9,7 +9,7 @@ const AllSellersTable = ({ user }) => {
 
 
     const handleVerify = email => {
-        fetch(`http://localhost:5000/user/verify/${email}`, {
+        fetch(` https://server-nine-lilac.vercel.app/user/verify/${email}`, {
             method: 'PUT',
         })
             .then(res => res.json())
@@ -22,7 +22,7 @@ const AllSellersTable = ({ user }) => {
 
 
     const handleDeleteUser = (email) => {
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(` https://server-nine-lilac.vercel.app/user/${email}`, {
             method: "DELETE",
             headers: {
                 'content-type': 'Application/json'

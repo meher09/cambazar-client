@@ -1,6 +1,6 @@
 const getUserDetails = async (email, product) => {
     const date = new Date().toJSON().slice(0, 10);
-    const userApi = `http://localhost:5000/user/${email}`
+    const userApi = ` https://server-nine-lilac.vercel.app/user/${email}`
     const res = await fetch(userApi)
     const data = await res.json()
     let vstatus = false

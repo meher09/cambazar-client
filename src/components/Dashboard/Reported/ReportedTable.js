@@ -7,7 +7,7 @@ const ReportedTable = ({ i, reported }) => {
 
     const handleKeep = (id) => {
 
-        const dbUri = `http://localhost:5000/product/reported/${_id}`
+        const dbUri = ` https://server-nine-lilac.vercel.app/product/reported/${_id}`
         const reported = { reported: false }
         fetch(dbUri, {
             method: 'PUT',
@@ -26,7 +26,7 @@ const ReportedTable = ({ i, reported }) => {
 
     // Delete Items 
     const handleDelete = (id) => {
-        const dbUri = `http://localhost:5000/product/reported/item/${id}`
+        const dbUri = ` https://server-nine-lilac.vercel.app/product/reported/item/${id}`
         fetch(dbUri, {
             method: "DELETE",
             headers: {

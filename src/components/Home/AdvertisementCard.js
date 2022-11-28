@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TiTick } from "react-icons/ti";
 import { GiPriceTag } from "react-icons/gi";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { MdPlace } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import BookingModal from '../BookingModal';
 
 
-const AdvertisementCard = ({ product }) => {
-
-
+const AdvertisementCard = ({ product, setProductInfo }) => {
 
     const {
         _id,
@@ -25,8 +24,9 @@ const AdvertisementCard = ({ product }) => {
         verified } = product
 
 
+
     const handleReport = (id) => {
-        const dbUri = `http://localhost:5000/product/reported/${_id}`
+        const dbUri = ` https://server-nine-lilac.vercel.app/product/reported/${_id}`
         const reported = { 'reported': true }
         fetch(dbUri, {
             method: 'PUT',
@@ -118,12 +118,21 @@ const AdvertisementCard = ({ product }) => {
 
                 <div className="divider"></div>
                 <div className="mt-6 flex justify-between items-center">
-                    <button className="btn btn-sm bg-rose-700 hover:bg-rose-900">Book Now</button>
+                    <label
+                        onClick={() => setProductInfo(product)}
+                        htmlFor="booking-modal"
+                        className="btn btn-sm bg-rose-700 hover:bg-rose-900">Book Now</label>
+
+
+
                     <Link to={`/product/${_id}`} className="btn btn-sm bg-transparent text-black hover:bg-rose-900">More Details</Link>
+
                     <button
                         onClick={() => handleReport()}
                         className="btn btn-sm bg-rose-700 hover:bg-rose-900">Report</button>
                 </div>
+
+
 
 
             </div>

@@ -8,11 +8,13 @@ import Blog from "../Pages/Blog";
 import Dashboard from "../Pages/Dashboard";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import MyBookings from "../Pages/MyBookings";
 import MyProduct from "../Pages/MyProduct";
 import Register from "../Pages/Register";
 import ReportedItems from "../Pages/ReportedItems";
 import SingleCategory from "../Pages/SingleCategory";
 import SingleProduct from "../Pages/SingleProduct";
+import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -43,12 +45,12 @@ const router = createBrowserRouter([
             {
                 path: 'category/:category',
                 element: <PrivateRoute><SingleCategory></SingleCategory></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.category}`)
+                loader: ({ params }) => fetch(` https://server-nine-lilac.vercel.app/products/${params.category}`)
             },
             {
                 path: 'product/:id',
                 element: <PrivateRoute><SingleProduct></SingleProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({ params }) => fetch(` https://server-nine-lilac.vercel.app/product/${params.id}`)
             },
         ]
     },
@@ -82,6 +84,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/my-products',
                 element: <PrivateRoute><MyProduct></MyProduct></PrivateRoute>,
+            },
+            {
+                path: '/dashboard/my-bookings',
+                element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>,
+
             },
 
         ]

@@ -12,7 +12,7 @@ const AddProduct = () => {
     const { loading, setLoading, user } = useContext(AuthContext)
     const { email } = user
     const navigate = useNavigate()
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
 
 
@@ -25,7 +25,7 @@ const AddProduct = () => {
                 const imgUrl = await data.data.display_url
                 productData.product_image = imgUrl
                 getUserDetails(user.email, productData).then(productData => {
-                    fetch('http://localhost:5000/products', {
+                    fetch(' https://server-nine-lilac.vercel.app/products', {
                         method: 'POST',
                         headers: { 'content-type': 'application/json' },
                         body: JSON.stringify(productData)
