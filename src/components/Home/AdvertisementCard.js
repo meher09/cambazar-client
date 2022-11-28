@@ -4,6 +4,7 @@ import { GiPriceTag } from "react-icons/gi";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { MdPlace } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 
 const AdvertisementCard = ({ product }) => {
@@ -24,6 +25,25 @@ const AdvertisementCard = ({ product }) => {
         verified } = product
 
 
+    const handleReport = (id) => {
+        const dbUri = `http://localhost:5000/product/reported/${_id}`
+        const reported = { 'reported': true }
+        fetch(dbUri, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reported)
+        })
+            .then(res => res.json()).then(data => {
+                if (data.acknowledged) {
+                    toast.success("Reported to admin")
+                }
+            })
+    }
+
+
+
 
 
     return (
@@ -33,6 +53,8 @@ const AdvertisementCard = ({ product }) => {
                 src={product_image}
                 className="h-56 w-full rounded-md object-cover"
             />
+
+
 
             <div className="mt-2">
 
@@ -94,9 +116,13 @@ const AdvertisementCard = ({ product }) => {
                 </div>
 
 
-                <div className="mt-4 flex justify-between">
+                <div className="divider"></div>
+                <div className="mt-6 flex justify-between items-center">
                     <button className="btn btn-sm bg-rose-700 hover:bg-rose-900">Book Now</button>
-                    <Link to={`/product/${_id}`} className="btn btn-sm bg-rose-500 hover:bg-rose-900">More Details</Link>
+                    <Link to={`/product/${_id}`} className="btn btn-sm bg-transparent text-black hover:bg-rose-900">More Details</Link>
+                    <button
+                        onClick={() => handleReport()}
+                        className="btn btn-sm bg-rose-700 hover:bg-rose-900">Report</button>
                 </div>
 
 

@@ -6,6 +6,8 @@ const SingleCategory = () => {
 
     const products = useLoaderData()
 
+  
+
 
 
     return (
@@ -13,7 +15,7 @@ const SingleCategory = () => {
             <div className="container px-4 py-12 sm:px-6 lg:px-8">
 
                 <div className="grid grid-cols-3">
-                    {products.map(product => <AdvertisementCard key={product._id} product ={product}></AdvertisementCard>)}
+                    {products.map(product => <AdvertisementCard key={product._id} product={product}></AdvertisementCard>)}
                 </div>
             </div>
         </section>
