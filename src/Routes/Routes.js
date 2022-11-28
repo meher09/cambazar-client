@@ -14,7 +14,6 @@ import Register from "../Pages/Register";
 import ReportedItems from "../Pages/ReportedItems";
 import SingleCategory from "../Pages/SingleCategory";
 import SingleProduct from "../Pages/SingleProduct";
-import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([

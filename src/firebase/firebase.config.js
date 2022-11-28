@@ -1,11 +1,11 @@
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
-    apiKey: "AIzaSyDPI98GuBePDu8JaBI-i7-BZpCllAVqP4s",
-    authDomain: "resell-camera.firebaseapp.com",
-    projectId: "resell-camera",
-    storageBucket: "resell-camera.appspot.com",
-    messagingSenderId: "522119866006",
-    appId: "1:522119866006:web:80a199210933a8d73b84b7"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
 };
 
 const app = initializeApp(firebaseConfig);
