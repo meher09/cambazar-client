@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const AllBuyersTable = ({ buyer }) => {
 
@@ -11,14 +12,14 @@ const AllBuyersTable = ({ buyer }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                toast.success("User Deleted Successfully")
             })
     }
 
 
 
 
-    const {  name, email } = buyer
+    const { name, email } = buyer
     return (
         <tr>
             <td className="whitespace-nowrap px-4 py-2 text-gray-700">{name}</td>
