@@ -8,6 +8,7 @@ import Blog from "../Pages/Blog";
 import Dashboard from "../Pages/Dashboard";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import MyProduct from "../Pages/MyProduct";
 import Register from "../Pages/Register";
 import ReportedItems from "../Pages/ReportedItems";
 import SingleCategory from "../Pages/SingleCategory";
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
                 path: '/dashboard/add-product',
                 element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
                 loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/reported`)
+            },
+            {
+                path: '/dashboard/my-products',
+                element: <PrivateRoute><MyProduct></MyProduct></PrivateRoute>,
             },
 
         ]

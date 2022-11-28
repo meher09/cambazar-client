@@ -1,28 +1,57 @@
-import React, { useContext, useEffect, useState } from 'react';
-
+import React, { useContext, useEffect } from 'react';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import getUserDetails from '../api/getUserDetails';
+import imgBbUploader from '../api/imgBbUploader';
+import Spinner from '../components/Spinner';
 import { AuthContext } from '../contexts/AuthProvider';
 
 
 const AddProduct = () => {
-    const [category, setCategory] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/categories').
-            then(res => res.json()).
-            then(data => setCategory(data))
-    },
-        [])
-    const user = useContext(AuthContext)
+    const { loading, setLoading, user } = useContext(AuthContext)
+    const { email } = user
+    const navigate = useNavigate()
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const handleFormSubmit = data => {
 
-    };
+
+
+    const handleFormSubmit = productData => {
+        setLoading(true)
+        const formData = new FormData()
+        formData.append('image', productData.product_image[0])
+        imgBbUploader(formData)
+            .then(async data => {
+                const imgUrl = await data.data.display_url
+                productData.product_image = imgUrl
+                getUserDetails(user.email, productData).then(productData => {
+                    fetch('http://localhost:5000/products', {
+                        method: 'POST',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify(productData)
+
+                    }).then(res => res.json())
+                        .then(data => {
+                            if (data.acknowledged) {
+                                toast.success('Product Upload Compleate')
+                                setLoading(false)
+                                navigate('/my-product')
+                            }
+                        })
+                })
+            })
+
+    }
+
+
+
 
 
 
     return (
         <form className="container ml-5" onSubmit={handleSubmit(handleFormSubmit)}>
             <h1 className='text-center text-2xl font-bold uppercase divider mb-6'>Add Your Products</h1>
+            {loading && <Spinner></Spinner>}
             <div className="w-full px-4 mx-auto md:w-5/6  lg:w-1/2">
                 <div className="col-span-6 mb-6">
                     <label htmlFor="password" className="block font-bold font-medium text-black">
@@ -72,9 +101,9 @@ const AddProduct = () => {
                     <select
                         {...register("category")}
                         className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none">
-                        {
-                            category.map(c => <option key={c._id} value={c._id}>{c.name}</option>)
-                        }
+                        <option value="6383116cada053ac0029e613">Action Camera</option>
+                        <option value="6383116cada053ac0029e611">Dslr Camera</option>
+                        <option value="6383116cada053ac0029e613">Video Camera</option>
 
                     </select>
                 </div>
@@ -89,6 +118,20 @@ const AddProduct = () => {
                     <input
                         type="text"
                         {...register("location", { required: true })}
+                        placeholder='Chittagong'
+                        className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                    />
+                </div>
+
+
+                <div className="col-span-6 mb-6">
+                    <label htmlFor="Image" className="block  font-medium text-black">
+                        Your Contact Number
+                    </label>
+
+                    <input
+                        type="text"
+                        {...register("seller_number", { required: true })}
                         placeholder='Chittagong'
                         className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />

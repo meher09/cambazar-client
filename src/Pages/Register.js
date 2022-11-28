@@ -21,7 +21,6 @@ const Register = () => {
         event.preventDefault();
         const form = event.target;
         const image = form.photo.files[0]
-        console.log(image)
         const formData = new FormData()
         formData.append('image', image)
         const name = form.name.value;

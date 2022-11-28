@@ -42,6 +42,9 @@ const ReportedTable = ({ i, reported }) => {
                     View Product
                 </Link>
             </td>
+         
+
+
             <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                 <div className="flex">
                     <button
