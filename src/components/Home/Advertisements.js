@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import AdvertisementCard from './AdvertisementCard';
-import { useForm } from 'react-hook-form';
 import BookingModal from '../BookingModal';
 
 
 const Advertisements = () => {
 
     const [productInfo, setProductInfo] = useState({})
-
-    const { register, handleSubmit, formState: { errors } } = useForm();
     const [products, setProducts] = useState([])
     useEffect(() => { fetch(' https://server-nine-lilac.vercel.app/products').then(res => res.json()).then(data => setProducts(data)) }
         , [])
