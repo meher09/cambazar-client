@@ -63,12 +63,12 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/buyers',
                 element: <PrivateRoute><AllBuyers></AllBuyers></PrivateRoute>,
-                loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/user/buyer`)
+                loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/user/role/buyer`)
             },
             {
                 path: '/dashboard/sellers',
                 element: <PrivateRoute><AllSellers></AllSellers></PrivateRoute>,
-                loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/user/seller`)
+                loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/user/role/seller`)
             },
             {
                 path: '/dashboard/reported',

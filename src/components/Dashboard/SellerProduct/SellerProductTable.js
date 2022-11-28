@@ -8,7 +8,7 @@ const SellerProductTable = ({ product }) => {
 
     const handleAdvertise = (id) => {
         const addvertise = { advertisement: true }
-        fetch(`http://localhost:5000/advertise/${id}`, {
+        fetch(`http://localhost:5000/product/advertise/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "Application/json"

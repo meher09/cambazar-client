@@ -40,7 +40,7 @@ const AllSellers = () => {
                 <tbody className="divide-y divide-gray-200">
 
                     {
-                        sellersData.map(buyer => <AllSellersTable key={buyer._id} buyer={buyer}></AllSellersTable>)
+                        sellersData.map(user => <AllSellersTable key={user._id} user={user}></AllSellersTable>)
                     }
                 </tbody>
             </table>
