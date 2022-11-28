@@ -18,7 +18,7 @@ const SingleProduct = () => {
     useEffect(() => { fetch(`http://localhost:5000/category/${category}`).then(res => res.json()).then(data => setProductCategory(data)) }, [])
 
     const handleReport = (id) => {
-        const dbUri = `http://localhost:5000/product/${_id}`
+        const dbUri = `http://localhost:5000/product/reported/${_id}`
         const reported = { 'reported': true }
         fetch(dbUri, {
             method: 'PUT',

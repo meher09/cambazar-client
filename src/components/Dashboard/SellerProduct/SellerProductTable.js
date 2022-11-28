@@ -7,16 +7,17 @@ const SellerProductTable = ({ product }) => {
     const { _id, pName, product_image, status, sellingPrice, advertisement } = product
 
     const handleAdvertise = (id) => {
-        const addvertise = { advertisement: true }
-        fetch(`http://localhost:5000/product/advertise/${id}`, {
+        const advertise = { advertisement: true }
+        fetch(`http://localhost:5000/products/advertise/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "Application/json"
             },
-            body: JSON.stringify(addvertise)
+            body: JSON.stringify(advertise)
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 if (data.modifiedCount > 0) {
                     toast.success("Advertisement Started")
                 }

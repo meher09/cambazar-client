@@ -73,12 +73,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/reported',
                 element: <PrivateRoute><ReportedItems></ReportedItems></PrivateRoute>,
-                loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/reported`)
+                loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/products/reported/items`)
             },
             {
                 path: '/dashboard/add-product',
                 element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
-                loader: () => fetch(`${process.env.REACT_APP_REQUEST_URL}/reported`)
             },
             {
                 path: '/dashboard/my-products',

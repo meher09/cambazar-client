@@ -7,9 +7,8 @@ const ReportedTable = ({ i, reported }) => {
 
     const handleKeep = (id) => {
 
-        const dbUri = `http://localhost:5000/product/${_id}`
+        const dbUri = `http://localhost:5000/product/reported/${_id}`
         const reported = { reported: false }
-        console.log(JSON.stringify(reported))
         fetch(dbUri, {
             method: 'PUT',
             headers: {
@@ -23,6 +22,23 @@ const ReportedTable = ({ i, reported }) => {
                 }
             })
     }
+
+
+    // Delete Items 
+    const handleDelete = (id) => {
+        const dbUri = `http://localhost:5000/product/reported/item/${id}`
+        fetch(dbUri, {
+            method: "DELETE",
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
+
+
+
 
 
     return (
@@ -42,7 +58,7 @@ const ReportedTable = ({ i, reported }) => {
                     View Product
                 </Link>
             </td>
-         
+
 
 
             <td className="whitespace-nowrap px-4 py-2 text-gray-700">
@@ -50,7 +66,9 @@ const ReportedTable = ({ i, reported }) => {
                     <button
                         onClick={() => handleKeep(_id)}
                         className='btn btn-sm bg-green-600 hover:bg-green-700 border-green-700 font-bold mr-2'>✓</button>
-                    <button className='btn btn-sm bg-rose-600 hover:bg-rose-700 border-green-700 font-bold'>✕</button>
+                    <button
+                        onClick={() => handleDelete(_id)}
+                        className='btn btn-sm bg-rose-600 hover:bg-rose-700 border-green-700 font-bold'>✕</button>
                 </div>
             </td>
         </tr >

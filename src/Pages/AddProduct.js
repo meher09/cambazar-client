@@ -35,7 +35,7 @@ const AddProduct = () => {
                             if (data.acknowledged) {
                                 toast.success('Product Upload Compleate')
                                 setLoading(false)
-                                navigate('/my-product')
+                                navigate('/dashboard/my-products')
                             }
                         })
                 })

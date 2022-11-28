@@ -4,7 +4,6 @@ import ReportedTable from '../components/Dashboard/Reported/ReportedTable';
 
 const ReportedItems = () => {
     const reportedItems = useLoaderData()
-
     return (
         <div className="container px-6">
             <h2 className='text-center font-bold text-3xl uppercase mb-10 divider'>All Sellers List </h2>
